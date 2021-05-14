@@ -14,10 +14,10 @@ import Stormtrooper from '../../assets/icons/stormtrooper.png';
 const Home: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{ flex: 1, width: '100%', alignItems: 'center', justifyContent: 'center' }}>
+      <View style={styles.imgContainer}>
         <Image style={styles.tinyLogo} source={Logo} resizeMode="cover" />
       </View>
-        <View style={{ flex: 2, padding: 10, alignItems: 'center', width: '90%', }}>
+        <View style={styles.menuContainer}>
           <View style={styles.menu}>
             <ButtonHome title="Peoples" image={DarthVader} routeName="PeopleListing" />
             <ButtonHome title="Planets" image={DeathStar} routeName="PeopleListing" />
@@ -37,10 +37,21 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000',
     alignItems: 'center',
   },
+  imgContainer: {
+    flex: 1, 
+    width: '100%', 
+    alignItems: 'center', 
+    justifyContent: 'center',
+  },
   tinyLogo: {
     marginVertical: 10,
     width: 200,
     height: 100,
+  },
+  menuContainer: {
+    flex: 2,  
+    alignItems: 'center', 
+    width: '80%', 
   },
   menu: {
     width: '100%',
