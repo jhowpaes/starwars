@@ -1,10 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import 'react-native-gesture-handler';
 
-import App from './src/App';
+import React from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { NavigationContainer } from '@react-navigation/native';
+
+import Routes from './src/routes';
 
 export default function index() {
   return (
-    <App />
+    <>
+    <StatusBar style="light" />
+    <NavigationContainer>
+      <Routes />
+    </NavigationContainer>
+    </>
   );
 }
