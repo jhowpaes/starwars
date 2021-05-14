@@ -33,15 +33,14 @@ const PeopleListing: React.FC = () => {
         setDataSource([...dataSource, ...responseJson.results]);
         setLoading(false);
       })
-      .catch((error) => {
-        console.error(error);
-      });
+      .catch((error) => {});
   };
 
   const renderFooter = () => {
     return (
       <View style={styles.footer}>
         <TouchableOpacity
+          testID="btnLoading"
           activeOpacity={0.9}
           onPress={getPeople}
           style={styles.loadMoreBtn}>
@@ -56,7 +55,7 @@ const PeopleListing: React.FC = () => {
 
   const ItemView = ({item}) => {
     return (
-      <TouchableOpacity 
+      <TouchableOpacity
         style={styles.itemContainer} 
         onPress={() => navigation.navigate('PeopleDetails', { people: item })}
       >
@@ -72,6 +71,7 @@ const PeopleListing: React.FC = () => {
     <View style={styles.container}>
       <Header title="People Listing" />
       <FlatList
+        testID="flPeople"
         contentContainerStyle={styles.flatList}
         data={dataSource}
         keyExtractor={(item, index) => index.toString()}
