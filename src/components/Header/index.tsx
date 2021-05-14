@@ -11,8 +11,8 @@ const Header: React.FC<HeaderProps> = ({title}) => {
   const navigation = useNavigation();
 
   return (
-    <SafeAreaView style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
+    <SafeAreaView testID="cpHeader" style={styles.container}>
+      <TouchableOpacity testID="btnHeader" onPress={() => navigation.goBack()}>
         <MaterialIcons name="keyboard-arrow-left" size={30} color="#000000" />
       </TouchableOpacity>
       <Text style={styles.title}>{title}</Text>
